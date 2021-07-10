@@ -1,0 +1,69 @@
+{% extends 'layout.html' %}
+
+
+{% block sidepannel %}
+    <div class="side-panel col-md-4 col-lg-4 col-xl-3">
+        <div class="content-section">
+            <h4 class="text-center" style="font-weight: 400;">On DD/MM we give remembrence to</h4>
+            <table class="SP-table mx-1">
+                {% for post in posts %} 
+                    <tr>
+                        <td>
+                            <img class="img-fluid img-ann" src="static/dog.jfif">
+                        </td>
+                        <td class="b">
+                            <p>{{ post.deceased}}</p>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div> <!--sidepannel closing div-->
+{% endblock sidepannel %}
+
+
+{% block content %}
+    <div class="main col-md-8 col-lg-8 col-xl-9">
+        <div class="row row-cols-1 row-cols-xl-2 gy-2 gx-2">
+            <!-- Card template-->
+            {% for post in posts %}
+            <div class="col">
+                <div class="content-section">
+                <div class="row">
+                    <div class="col-5 padding-right">
+                        <a href="link.html"> <img src="static/dog.jfif" class="img-box img-fluid" > </a>
+                    </div>
+                    
+                    <div id="parent" class="col-7 padding-right">
+                            <div class="row px-0">
+                                <div id="child1" class="row px-0">
+                                    <p class="content-title">{{ post.deceased }}</p>
+                                    <p class="content-info">{{ post.dod }}</p>
+                                    <p class="content-info">{{ post.location }}</p>
+                                </div>
+                                <div id="child2" class="row px-0">
+                                    <span class="px-0">
+                                        <i class="far fa-heart fa"> 5</i>
+                                        <i class="fas fa-heart-broken fa"> 5</i>
+                                        <i class="fas fa-praying-hands fa"> 6</i>
+                                        <i class="fas fa-hand-holding-heart fa"> 2</i>
+                                        <i class="fas fa-dove fa"> 2</i>
+                                    </span>
+                                </div>
+                            </div>                                    
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <p class="content-para">Remembered for: Lorem Ipsum is simply dummy text of which there is not much use except... (more)</p>
+                </div>
+    
+            </div>
+            </div><!-- End of Card template-->  
+            {% endfor %}
+
+        </div> <!-- reow defining the grid closing div-->
+    </div><!-- main Column closing div-->
+
+
+{% endblock content %}

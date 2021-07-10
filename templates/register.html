@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="center-screen">
+        <div class="single-pannel">
+            <p class="title"> Register with Light A Candle </p>
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}  <!-- CSRF token -->
+                <div class="mb-3">
+                    {{ form.email.label(class="form-label")}}
+                    {{ form.email(class="form-control")}}
+                    <div class="form-text">Conformation code will be sent to this address</div>
+                </div>
+                <div class="mb-3">
+                    {{ form.password.label(class="form-label") }}
+                    {{ form.password(class="form-control") }}
+                    <div class="form-text">Password must contain a min of 7 characters of which one must be capital, one small letter, one numeric and one special character</div>
+                </div>
+                <div class="mb-3">
+                    {{ form.confirm_password.label(class="form-label") }}
+                    {{ form.confirm_password(class="form-control") }}
+                </div>
+                <div class="mb-3">
+                    {{ form.submit(class="btn btn-primary") }}
+                </div>
+
+            </form>
+            <div class="border-top1 pt-2">
+                <p class="text-muted" style="font-size: smaller;">Already registered? continue to <a href="{{ url_for('login') }}"> Sign In</a></p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+{% endblock content %}
